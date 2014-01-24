@@ -1,0 +1,45 @@
+- var metaPage = {metaTitle: 'Samsung',metaDescription:'descripciones',metaKeywords:'valoresssss',metaAuthor:'',linkFavicon:'favicon.ico'}
+- var metaFB = {metaTitle: 'App Samsung',metaDescription:'descripciones',metaType:'website',metaUrl:'http://dominio.com',metaImage:'http://dominio.com/icono.jpg'}
+doctype 5
+// if lt IE 7
+    <html lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7">
+// if IE 7
+    <html lang="es" class="no-js lt-ie9 lt-ie8">
+// if IE 8
+    <html lang="es" class="no-js lt-ie9">
+// [if gt IE 8]><!
+html(lang="es", class="no-js")
+//<![endif]
+head
+    meta(charset='utf-8')
+    title= metaPage.metaTitle
+    meta(name='description',content=metaPage.metaDescription)
+    meta(name='keywords',content=metaPage.metaKeywords)
+    meta(name='author',content=metaPage.metaAuthor)
+    meta(property='og:title', content=metaFB.metaTitle)
+    meta(property='og:description', content=metaFB.metaDescription)
+    meta(property='og:type', content=metaFB.metaType)
+    meta(property='og:url', content=metaFB.metaUrl)
+    meta(property='og:image', content=metaFB.metaImage)
+    link(rel='shortcut icon', type='image/x-icon', href=metaPage.linkFavicon)
+    block styles
+
+    style
+        canvas{
+            border:1px solid red;
+        }
+
+    script.
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-XXXXXXX-X']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+body
+    block content
+    block scripts

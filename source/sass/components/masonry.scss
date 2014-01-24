@@ -1,0 +1,56 @@
+@mixin border-radius($radius: 5px) {
+    -moz-border-radius:    $radius;
+    -webkit-border-radius: $radius;
+    border-radius:         $radius;
+}
+
+#cols {
+  width: 100%;
+  max-width: 1100px;
+  margin: 2em auto;
+
+  li {
+    @include border-radius(50%);
+    margin-bottom: 20px; 
+    padding: 6px 20px;
+    color: #777777;
+    display: inline-block;
+    line-height: 1.5em;
+    padding: 5px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    opacity: 0.6;
+    background: red;
+    &:hover {
+
+    }    
+  }
+
+
+  @for $i from 1 through 6 {
+
+    li:nth-child(#{$i}) {
+      width: $i * 20 + px;
+      height: $i * 20 + px;
+    }
+  }
+}
+
+#contact {
+  li {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    img {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      @include transition (all 2.0s ease-in-out);
+      &:hover {
+        @include transform(rotate(360deg) scale(2));
+      }
+    }
+  }
+}
+  
