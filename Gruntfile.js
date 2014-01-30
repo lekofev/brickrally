@@ -54,7 +54,9 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files: {
-                    'source/javascript/application.js': 'source/coffeescript/application.coffee'
+                    'source/javascript/application.js': 'source/coffeescript/application.coffee',
+                    'source/javascript/RoadManager.js': 'source/coffeescript/RoadManager.coffee',
+                    'source/javascript/CarManager.js': 'source/coffeescript/CarManager.coffee'
                 }
             },
             release: {
@@ -62,7 +64,8 @@ module.exports = function (grunt) {
                     join: true
                 },
                 files: {
-                    'dist/javascript/application.js': 'source/coffeescript/application.coffee'
+                    'dist/javascript/application.js': 'source/coffeescript/application.coffee',
+                    'dist/javascript/RoadManager.js': 'source/coffeescript/RoadManager.coffee'
                 }
             }
         },
@@ -121,18 +124,26 @@ module.exports = function (grunt) {
         watch: {
             jadewatch: {
                 files: ['source/*.jade', 'source/layouts/*.jade', 'source/partials/*.jade'],
-                tasks: ['jade']
+                tasks: ['jade'],
+                options: {                   
+                    nospawn: true
+                }
+                
             },
             sasswatch: {
                 files: ['source/sass/*.scss', 'source/sass/*/*.scss'],
                 tasks: ['sass'],
                 options: {
-                    livereload: true
+                    livereload: true,                    
+                    nospawn: true
                 }
             },
             coffeewatch: {
                 files: ['source/coffeescript/*.coffee'],
-                tasks: ['coffee']
+                tasks: ['coffee'],
+                options: {                   
+                    nospawn: true
+                }
             }
         }
     });
