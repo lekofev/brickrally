@@ -80,6 +80,7 @@ class Playing
 
 		@px1 = @game.add.sprite @game.world.width/2, @game.world.height/2,'px'
 		@px1.name = 'px1'
+		
 		@px2 = @game.add.sprite @game.world.width/2, @game.world.height/2-200,'px'
 		@px2.name = 'px2'
 		@px2.body.velocity.y = 100
